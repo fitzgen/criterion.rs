@@ -30,7 +30,14 @@ extern crate itertools_num;
 extern crate serde;
 extern crate serde_json;
 extern crate simplelog;
+
+#[cfg(not(target_arch = "wasm32"))]
 extern crate walkdir;
+
+#[cfg(target_arch = "wasm32")]
+extern crate wasm_bindgen;
+#[cfg(target_arch = "wasm32")]
+extern crate web_sys;
 
 #[cfg(feature = "html_reports")]
 extern crate criterion_plot;
