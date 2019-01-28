@@ -1,3 +1,5 @@
+#![cfg(not(all(target_arch = "wasm32", not(target_os = "emscripten"))))]
+
 #[macro_use]
 extern crate criterion;
 extern crate serde_json;
